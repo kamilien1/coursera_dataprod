@@ -1,4 +1,5 @@
 # UI file
+library(shiny)
 source('helper.R')
 fluidPage(
     
@@ -7,21 +8,25 @@ fluidPage(
     sidebarLayout(
 
         sidebarPanel(
-            p('Note: This may work with non-yahoo articles, however, 
-              it was only tested with Yahoo News articles...proceed with caution'),
-            textInput("customURL", "Enter a Yahoo News URL", 
-                      value = "http://news.yahoo.com/greek-pm-tsipras-under-pressure-over-covert-syriza-141355526--business.html"),
+            p('Note: Be sure you provide a proper URL. There is no conditional logic
+              to help stop errors, such as a bad URL, or a site without <p> tags. Proceed 
+              with caution.'),
+            textInput("customURL", "Enter a News URL", 
+                      value = "http://usa.chinadaily.com.cn/world/2015-02/09/content_19524269.htm"),
             actionButton("updateArticle", "Wordcloud a New Article"),
             hr(),
+            # slider bar chooses the minimum frequency of words needed
+            # for plotting
             sliderInput("freq",
                         "Choose min word count to include",
                         min = 1,  max = 50, value = 20),
+            # slider bar chooses the max # of words to plot
             sliderInput("max",
                         "Choose the max number of words in the cloud",
                         min = 50,  max = 250,  value = 150)
         ),
         
-        # Show Word Cloud
+        # Plot the wordcloud
         mainPanel(
             plotOutput("plot")
         )

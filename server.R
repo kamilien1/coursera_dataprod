@@ -1,4 +1,5 @@
 # server file
+library(shiny)
 source('helper.R')
 
 other_words <- c('said','who','the','will','neededundo','needed','undo','make',
@@ -12,8 +13,8 @@ function(input, output) {
        isolate({
            withProgress({
                setProgress(message="The minions are working...")
+               # return the custom URL
                input$customURL
-               #input$selectionArticle
            })
        })
        

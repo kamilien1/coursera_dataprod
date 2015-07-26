@@ -1,28 +1,13 @@
-
 # load relevant libraries
 library(RColorBrewer)
 library(wordcloud)
 library(tm)
-
 # rvest parses text nicely
 library(rvest)
-
-
-news_articles <<- list('Las Vegas Fire'='http://news.yahoo.com/fire-erupts-swimming-pool-hotel-las-vegas-strip-200920738.html',
-                       'Obama in Kenya'='http://news.yahoo.com/obama-close-historic-kenya-visit-national-address-042020108--politics.html',
-                       'Republican View of Trump'='http://news.yahoo.com/2016-republicans-trump-tv-debate-cut-120541607.html')
-
-example <- function() {
-    htmlpage <-html("https://www.yahoo.com/politics/obama-aide-under-new-gitmo-plan-some-detainees-125025374446.html")
-    text <- html_nodes(htmlpage,xpath="//div[@class='body read-more-cut']")
-    words <- html_text(text)
-    words
-}
 
 # If we get a 0 value, an error is thrown
 getURLtext <- function(myurl) {
     htmlpage <-html(myurl)
-    #text <- html_nodes(htmlpage,xpath="//div[@class='body read-more-cut']")
     text <- html_nodes(htmlpage,xpath="//p")
     words <- html_text(text)
     words
@@ -30,11 +15,9 @@ getURLtext <- function(myurl) {
 ## words to exclude
 other_words <- c('said','who','the','will','neededundo','needed','undo')
 
-word_cloud_it(words,other_words,random.order=F)
+# function
+word_cloud_it <- function(file, rmwords='',minfreq = 5,maxwords=150, ...) {
 
-word_cloud_it <- function(file, rmwords='',minfreq = 20,maxwords=150, ...) {
-
-    
     # take in the entire file
     # so you better subset the columns to claim1 and whatever else
     c <- Corpus(VectorSource(file))
