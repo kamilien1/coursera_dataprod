@@ -6,11 +6,11 @@ date: July 2015
 Wordcloud App
 ========================================================
 
-The wordcloud app can be [viewed by clicking on this linked text.](https://kamilien1.shinyapps.io/coursera_dataprod) 
+The wordcloud app can be **[viewed by clicking on this linked text.](https://kamilien1.shinyapps.io/coursera_dataprod)** 
 
 The premise of the app is straightforward: take a website link and make a wordcloud
 of the words. A **wordcloud** is simply a cloud of words. Motivation for creating a 
-wordcloud can be found [here.](http://onertipaday.blogspot.com/2011/07/word-cloud-in-r.html)
+wordcloud can be found **[here.](http://onertipaday.blogspot.com/2011/07/word-cloud-in-r.html)**
 
 Why Use a Wordcloud?
 ========================================================
@@ -41,3 +41,10 @@ Let's evaluate the expression in the next slide, using patent US20130263920A1 [M
 Example Cloud
 ========================================================
 
+```r
+source('helper.R')
+myurl <- "https://patents.google.com/patent/US20130263920A1/en"
+word_cloud_it(getURLtext(myurl),random.order=FALSE)
+```
+
+<img src="Wordcloud-Pitch-Deck-figure/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
