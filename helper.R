@@ -22,7 +22,7 @@ word_cloud_it <- function(file, rmwords='',minfreq = 5,maxwords=150, ...) {
     # so you better subset the columns to claim1 and whatever else
     c <- Corpus(VectorSource(file))
     # convert to UTF 8 to 'make it work'
-    c <- tm_map(c,content_transformer(function(x) iconv(x, to='UTF-8-MAC', sub='byte')), mc.cores=1)
+    c <- tm_map(c,content_transformer(function(x) iconv(x, to='UTF-8', sub='byte')), mc.cores=1)
     # lower case results
     c <- tm_map(c,content_transformer(tolower),mc.cores=1)
     # no punctuations !?.,
@@ -37,3 +37,8 @@ word_cloud_it <- function(file, rmwords='',minfreq = 5,maxwords=150, ...) {
     wordcloud(c,min.freq=minfreq,max.words=maxwords, colors=pal2,...)
     
 }
+
+#test
+
+#myurl <- "https://patents.google.com/patent/US20130263920A1/en"
+#word_cloud_it(getURLtext(myurl),random.order=FALSE)
