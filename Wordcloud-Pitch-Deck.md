@@ -41,10 +41,8 @@ Let's evaluate the expression in the next slide, using patent US20130263920A1 [M
 Example Cloud
 ========================================================
 
-```r
-source('helper.R')
-myurl <- "https://patents.google.com/patent/US20130263920A1/en"
-word_cloud_it(getURLtext(myurl),random.order=FALSE)
-```
 
-<img src="Wordcloud-Pitch-Deck-figure/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
+```
+Error in function (type, msg, asError = TRUE)  : 
+  Failed to connect to patents.google.com port 443: Operation timed out
+```

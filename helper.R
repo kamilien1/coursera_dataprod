@@ -42,3 +42,6 @@ word_cloud_it <- function(file, rmwords='',minfreq = 5,maxwords=150, ...) {
 
 #myurl <- "https://patents.google.com/patent/US20130263920A1/en"
 #word_cloud_it(getURLtext(myurl),random.order=FALSE)
+
+myurl <- "http://azure-international.tumblr.com/post/84895467461/chinas-lithium-ion-battery-price-drops-driven-by"
+word_cloud_it(getURLtext(myurl),random.order=FALSE)
