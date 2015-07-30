@@ -1,17 +1,16 @@
-# Note -- My Shiny-Hosted App went over the "Free" Usage Amount
+# Note -- In case my Shiny App is Not Running...
 
-My apologies, this is the limit of my technical prowess...  
+I have seen it restart a few times --my apologies, this is the limit of my technical prowess...  
 So please use the following code to run my app:
 
 `library(shinyapps)`  
 `runGitHub("coursera_dataprod" , "kamilien1")`
 
 
-Thanks for being understanding! If you solve the issue, please post it on 
-our course page. I made a forum thread on this topic:  
+I found an issue if you run over 25 hours, and I made a forum thread on this topic:  
 https://class.coursera.org/devdataprod-030/forum/thread?thread_id=101
 
-...and I think I know why. I read on the [shinyapps](https://www.rstudio.com/products/shinyapps/) site 
+Also, if you have the same problem: I read on the [shinyapps](https://www.rstudio.com/products/shinyapps/) site 
 that I get **25** active hours. I accidentally ran my app for 25 hours straight! So I think you'll 
 need to use `runGitHub()`. Sorry, and thanks for being patient! 
 
